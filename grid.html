@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            *{border: 1px solid black;}
+            span{ 
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: rgb(199, 38, 38);
+                margin: 10px;
+            }
+            display: grid;
+            grid-template-rows: 100px 200px 300px 200px;
+            grid-template-areas: 
+            "h h h"
+            "nav cab cab"
+            "nav con con"
+            "nav rod rod"
+            ;
+        }
+        .header{
+            grid-area: h;
+            display: flex;
+            align-items: center;
+        }
+        .navegacao{grid-area: nav;}
+        .cabecalho{grid-area: cab;}
+        .conteudo{grid-area: con;}
+        .rodape{grid-area: rod;}
+        
+    </style>
+</head>
+<body class="container">
+    <div class="header">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="navegacao">navegacao</div>
+    <div class="cabecalho">cabecalho</div>
+    <div class="conteudo">conteudo</div>
+    <div class="rodape">rodape</div>
+</body>
+</html>
