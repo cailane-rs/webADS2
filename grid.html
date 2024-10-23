@@ -5,44 +5,47 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{border: 1px solid black;}
         .container{
-            *{border: 1px solid black;}
-            span{ 
-                display: inline-block;
-                height: 30px;
-                width: 30px;
-                border-radius: 50%;
-                background-color: rgb(199, 38, 38);
-                margin: 10px;
-            }
             display: grid;
-            grid-template-rows: 100px 200px 300px 200px;
-            grid-template-areas: 
-            "h h h"
-            "nav cab cab"
-            "nav con con"
-            "nav rod rod"
-            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 20svh 20svh 20svh 20svh;
         }
         .header{
             grid-area: h;
             display: flex;
             align-items: center;
         }
-        .navegacao{grid-area: nav;}
-        .cabecalho{grid-area: cab;}
-        .conteudo{grid-area: con;}
-        .rodape{grid-area: rod;}
+        #box5{
+
+        }
+        #box5{grid-area: 4/5/6/6;}
+        #box4{grid-area: 2/5;}
+       #box3 {grid-area: 1/1/2/6;}
+       #box2 {grid-area: 4/2/5/5;}
+       #box1{
+        /*
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 4;
+        grid-row-end: 5;
+
+        grid-column: 2/5;
+        grid-row: 4/5;
+
+        grid-area: 4/2/5/5;
+        */
+        grid-column: 2/5;
+        grid-row: 4/5;
+       }
         
     </style>
 </head>
 <body class="container">
-    <div class="header">
-        <span></span><span></span><span></span>
-    </div>
-    <div class="navegacao">navegacao</div>
-    <div class="cabecalho">cabecalho</div>
-    <div class="conteudo">conteudo</div>
-    <div class="rodape">rodape</div>
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="box" id="box4">box4</div>
+    <div class="box" id="box5">box5</div>
 </body>
 </html>
