@@ -1,0 +1,38 @@
+<!-- Seja o trecho de código HTML e CSS da figura a seguir e explique porque cada regra foi aplicada em cada item.-->
+<!DOCTYPE html>
+<head>   
+   <title>Exemplo especificidade de seletores</title>
+   <style>
+      /*regra 1*/ li{color:red;}
+      /*regra 2*/ .churras{color:green;}
+      /*regra 3*/ .fruta{color:gray}
+      /*regra 4*/ li+li.churras{color: black;}
+      /*regra 5*/ .churras[draggable="true"]{color: magenta;}
+      /*regra 6*/ #lip1,#lip2,#lip3{color:blue}
+      /*regra 7*/ #lip3.fruta{color:orange}
+      /*regra 8*/ ol>li.churras#lip5{color:purple}
+   </style>
+</head>
+<body>   
+   <ol>
+   <!--item 1--> <li id="lip0">Abacaxi</li>
+   <p>aplica vermelho a todas as tags "li"</p>
+   <!--item 2--> <li class="fruta">Melão</li>
+   <p>aplica cinza a todos com classe .fruta</p>
+   <!--item 3--> <li id="lip2" class="fruta">Pera</li>
+   <p>Cor azul para elemento do id lip2</p>
+   <!--item 4--> <li id="lip3" class="fruta">Uva</li>
+   <p>cor laranja para id de lip3 mais classe fruta</p>
+   <!--item 5--> <li id="lip4" class="fruta">Maçã</li>
+   <p>Cor cinza pelo "li"</p>
+   <!--item 6--> <li class="churras">Carne</li>
+   <p>cor verde devido a classe .churras</p>
+   <!--item 7--> <li class="churras">Linguiça</li>
+   <p>cor verde devido a classe .churras</p>
+   <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+   <p>fic magenta, regra 5 com draggable="true"</p>
+   </ol>   
+
+
+</body>
+</html>
