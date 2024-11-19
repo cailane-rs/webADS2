@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Informe A</label>    
+    <input type="text" id="a">
+
+    <label for="b">Informe B</label>
+    <input type="text" id="b">
+
+    <button>Somar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        let inputA=document.querySelector("#a");
+        let inputB = document.querySelector("#b");
+        let bnt = document.querySelector("button");
+        let pResult = document.querySelector("#resultado");
+
+        bnt.addEventListener("click", () => {
+            let numberA = Number.parseInt(inputA.value);
+            let numberB = Number.parseInt(inputB.value);
+            pResult.innerHTML=numberA+numberB;
+        })
+    </script>
+</body>
+</html>

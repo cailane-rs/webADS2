@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="bnt">Hello</button>
+
+<script>
+    //Para exibir Hello no console sempre que clicar no botão
+    let botao = document.querySelector("#bnt");
+    botao.addEventListener("click", () => {console.log("Hello");});
+    /*
+    function hello() {
+        console.log("Hello");
+    }
+    */
+
+    //botão exibir contador sempre que clicado
+   let i=0;
+   document.querySelector("button").addEventListener("click", () => {
+    document.querySelector("button").innerHTML=i;
+    i++;
+   })
+</script>
+</body>
+</html>
