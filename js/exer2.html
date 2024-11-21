@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click em mim</button>
+
+    <script>
+        let i = 0;
+        let botao = document.querySelector("button");
+        botao.addEventListener("click", () => {
+            botao.innerHTML = i+=1;
+            console.log(botao.innerHTML);
+        })
+
+    </script>
+</body>
+</html>
