@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100svh;
+        }
+        #tecla{
+            border: 1px solid black;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <p id="tecla">Digite seu texto: </p>
+    <script>
+        let ptecla = document.querySelector("#tecla");
+        document.addEventListener("keypress", (e) => {
+            e; //nesse contexto é o nosso evento
+            console.log(e.keyCode);
+            ptecla.innerHTML+=e.key;
+        })  
+    </script>
+
+</body>
+</html>

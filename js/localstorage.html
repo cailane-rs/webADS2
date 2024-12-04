@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nota" type="text">
+    <button id="salvar">salvar</button>
+    <ul>
+
+    </ul>
+    <script>
+        let inputNota = document.querySelector("#nota");
+        let btnSalvar = document.querySelector("#salvar");
+        let lista = document.querySelector("ul");
+        let contador = 0;
+        let notas = [];
+
+        function salvarEmLocalStorage(chave, valor) {
+            localStorage.setItem(chave, valor);
+        }
+
+        function exibirNotas(notas, contador) {
+            if(notas.length > 0) {
+                let li = document.createElement("li");
+                li.innerText = notas[contador].value;
+                lista.appendChild(li);
+                inputNota.value = "";
+            }
+            
+        }
+//NECESSÁRIO ARRUMAR CÓDIGO;
+
+        exibirNotas(notas, contador);
+
+        btnSalvar.addEventListener("click", () => {
+            notas[contador] = inputNota.value;
+            salvarEmLocalStorage("nota"+contador, inputNota.value);
+            exibirNotas(notas, contador);
+            contador++;
+            console.log(notas.length);
+        })
+    </script>
+</body>
+</html>
