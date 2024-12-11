@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .filmes{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .poster{
+            height: 300px;
+            width: 100px;
+
+        }
+        img{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="key">
+    <button>Buscar</button>
+    <div class="filmes"></div>
+
+    <script>
+        let inputText = document.querySelector("#key");
+        document.querySelector("button").addEventListener("click", ()=>{
+            buscarFilmes(inputText.value);
+        })
+
+        function buscarFilmes(keywork) {
+            apikey = "b920a992";
+            url=`http://www.omdbapi.com/?s=${keywork}&apikey=`+apikey
+    
+            fetch(url)
+            .then(response=>response.json())
+            .then(dados=>{
+                console.log(dados)
+                if ( dados.Response=="False"){
+                    alert(dados.Error);
+                }else{
+                    console.log(JSON.stringify(dados));
+    
+                dados.Search.forEach(element => {
+                    document.querySelector(".filmes").innerHTML+=bannerFilmes(element);
+                })
+            }
+            })
+        }
+
+        function bannerFilmes(json) {
+            poster = `
+            <div class="poster">
+                <h2>${json.Title}</h2>    
+                <img src="${json.Poster}">
+                <p>${json.Year}</p>
+                <p>Duracao: ${json.Runtime}</p>
+            </div>`
+
+            return poster;
+        }
+    
+    </script>
+</body>
+</html>
